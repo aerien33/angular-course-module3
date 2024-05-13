@@ -10,7 +10,8 @@ function NarrowItDownController(MenuSearchService) {
     var controller = this;
 }
 
-function MenuSearchService() {
+MenuSearchService.$inject = ['$http'];
+function MenuSearchService($http) {
     var service = this;
 
     service.getMatchedMenuItems = function (searchTerm) {
@@ -20,15 +21,16 @@ function MenuSearchService() {
                }).then(function (result) {
                    var foundItems = [];
                    for (let category in result.data) {
-                       for (let item in category.menu_items) {
-                           if (item.description.toLowerCase().indexOf(searchTerm) !== -1) {
-                               foundItems.push(item);
+                       let menu_items = result.data[category].menu_items;
+                       for (let item in menu_items) {
+                           if (menu_items[item].description.toLowerCase().indexOf(searchTerm) !== -1) {
+                               foundItems.push(menu_items[item]);
                            }
                        }
+                   }
 
                    return foundItems;
-               }
-        });
+               });
     }
 }
 
