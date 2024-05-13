@@ -8,6 +8,16 @@ angular.module('NarrowItDownApp', [])
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
     var controller = this;
+    controller.searchTerm = "";
+    controller.found = [];
+
+    controller.getItems = function (searchTerm) {
+        MenuSearchService.getMatchedMenuItems(searchTerm)
+            .then(function (result) {
+                controller.found = result;
+                console.log(controller.found);
+            });
+    }
 }
 
 MenuSearchService.$inject = ['$http'];
