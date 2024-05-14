@@ -1,7 +1,8 @@
 <div>
   <ol>
     <li ng-repeat="item in controller.found">
-      {{item.name}} <br> {{item.description}}
+      {{item.name}} <br> {{item.description}} <br>
+      <button ng-click="controller.onRemove({index: $index});">Don't want this one!</button>
     </li>
   </ol>
 </div>

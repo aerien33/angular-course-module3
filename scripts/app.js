@@ -18,6 +18,10 @@ function NarrowItDownController(MenuSearchService) {
                 controller.found = result;
             });
     }
+
+    controller.removeItem = function (index) {
+        controller.found.splice(index, 1);
+    };
 }
 
 MenuSearchService.$inject = ['$http'];
@@ -47,7 +51,8 @@ function MenuSearchService($http) {
 function FoundItemsDirective() {
     var ddo = {
         scope: {
-            found: '<'
+            found: '<',
+            onRemove: '&'
         },
         templateUrl: 'templates/foundItems.html',
         controller: FoundItemsDirectiveController,
