@@ -1,8 +1,9 @@
-<div>
-  <ol>
+<div ng-if="controller.submit">
+  <ol ng-show="controller.displayItems()">
     <li ng-repeat="item in controller.found">
       {{item.name}} ({{item.short_name}}) <br> {{item.description}} <br>
       <button ng-click="controller.onRemove({index: $index});">Don't want this one!</button>
     </li>
   </ol>
+  <div ng-hide="controller.displayItems()">Nothing found</div>
 </div>
