@@ -9,14 +9,15 @@ angular.module('NarrowItDownApp', [])
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
     var controller = this;
-    controller.searchTerm = "";
+    controller.input = "";
     controller.submit = false;
     controller.found = [];
 
-    controller.getItems = function (searchTerm) {
+    controller.getItems = function (input) {
         controller.submit = true;
+        controller.searchTerm = controller.input;
         if (controller.searchTerm !== "") {
-            MenuSearchService.getMatchedMenuItems(searchTerm)
+            MenuSearchService.getMatchedMenuItems(controller.searchTerm)
                 .then(function (result) {
                     controller.found = result;
             });
