@@ -1,9 +1,19 @@
-<div ng-if="controller.submit">
-  <ol ng-show="controller.displayItems()">
-    <li ng-repeat="item in controller.found">
-      {{item.name}} ({{item.short_name}}) <br> {{item.description}} <br>
-      <button ng-click="controller.onRemove({index: $index});">Don't want this one!</button>
-    </li>
-  </ol>
-  <div ng-hide="controller.displayItems()">Nothing found</div>
+<div ng-if="controller.submit" class="result">
+  <div ng-show="controller.displayItems()">
+    <ol>
+      <div class="loader"></div>
+      <li ng-repeat="item in controller.found">
+        <div class="text">
+          <div class="fullTitle">
+            <span class="title">{{item.name}}</span> ({{item.short_name}}) <br>
+          </div>
+            <div class="description">{{item.description}}</div>
+        </div>
+        <div class="button">
+          <button class="btn btn-secondary" ng-click="controller.onRemove({index: $index});">Don't want this one!</button>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div ng-hide="controller.displayItems()" class="alert alert-primary message" role="alert">Nothing found</div>
 </div>

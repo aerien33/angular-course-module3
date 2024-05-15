@@ -1,52 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+
+body {
+    background-color: aliceblue;
+    margin-top: 7%;
+}
+
+.container {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    width: 50%;
+    padding: 40px 0px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    background-color: white;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, .message {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 h1 {
-  margin-bottom: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 600;
 }
+
 input[type="text"] {
-  width: 200px;
-  float: left;
+    display: block;
+    margin-left: 15%;
+    margin-bottom: 20px;
+    width: 70%;
+    float: left;
 }
+
 .narrow-button {
-  float: left;
-  margin-left: 10px;
+    display: block;
+    text-align: center;
 }
+
+.btn-primary {
+  background-color: cornflowerblue;
+  border: none;
+}
+
+.message {
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    width: 30%;
+    font-size: 1.2em;
+}
+
+ol {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    display: block;
+    text-align: left;
+}
+
+li {
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+}
+
+span.title {
+    font-weight: 700;
+}
+
+div.description {
+    max-width: 70%;
+    font-style: italic;
+}
+
+.btn-secondary {
+  display: block;
+  float: right;
+  background-color: darkgray;
+  border: none;
+  margin-top: -60px;
+  margin-left: 15px;
+}
+
 .loader {
-  display: none;
-  margin-left: 5px;
-  font-size: 10px;
-  float: left;
-  border-top: 1.1em solid rgba(147, 147, 147, 0.2);
-  border-right: 1.1em solid rgba(147, 147, 147, 0.2);
-  border-bottom: 1.1em solid rgba(147, 147, 147, 0.2);
-  border-left: 1.1em solid #676767;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
+    display: none;
+    margin-left: 5px;
+    font-size: 10px;
+    float: left;
+    border-top: 1.1em solid rgba(147, 147, 147, 0.2);
+    border-right: 1.1em solid rgba(147, 147, 147, 0.2);
+    border-bottom: 1.1em solid rgba(147, 147, 147, 0.2);
+    border-left: 1.1em solid #676767;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
 }
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
+
+.loader, .loader:after {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
 }
+
 @-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
+
 @keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+  div.fullTitle {
+    max-width: 70%;
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  
+  div.description {
+    max-width: 60%;
   }
+  
+}
+
+@media only screen and (max-width: 1300px) {
+    .container {
+      width: 90%;
+    }
+    
+    div.fullTitle {
+      max-width: 70%;
+    }
+
+    div.description {
+      max-width: 60%;
+    }
+
+}
+
+@media only screen and (max-width: 745px) {
+  
+    .message {
+      width: 50%;
+    }
+  
+    ol {
+      padding-top: 0px;
+      display: grid;
+    }
+
+    li {
+      display: grid;
+    }
+
+    div.text {
+      max-width: 100%;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    div.fullTitle {
+      max-width: 100%;
+    }
+
+    div.description {
+      max-width: 100%;
+    }
+
+    div.button {
+      display: inline-flex;
+      margin: auto;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      margin: auto;
+    }
+  
 }
