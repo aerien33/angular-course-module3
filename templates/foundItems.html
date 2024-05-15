@@ -1,7 +1,9 @@
 <div ng-if="controller.submit" class="result">
+  <div ng-if="controller.loading" class="loading">
+    <div class="loader"></div>
+  </div>
   <div ng-show="controller.displayItems()">
     <ol>
-      <div class="loader"></div>
       <li ng-repeat="item in controller.found">
         <div class="text">
           <div class="fullTitle">

@@ -11,15 +11,18 @@ function NarrowItDownController(MenuSearchService) {
     var controller = this;
     controller.input = "";
     controller.submit = false;
+    controller.loading = false;
     controller.found = [];
 
     controller.getItems = function (input) {
         controller.submit = true;
         controller.searchTerm = controller.input;
         if (controller.searchTerm !== "") {
+            controller.loading = true;
             MenuSearchService.getMatchedMenuItems(controller.searchTerm)
                 .then(function (result) {
                     controller.found = result;
+                    controller.loading = false;
             });
         }
     }
@@ -61,6 +64,7 @@ function FoundItemsDirective() {
     var ddo = {
         scope: {
             submit: '<',
+            loading: '<',
             found: '<',
             displayItems: '&display',
             onRemove: '&'

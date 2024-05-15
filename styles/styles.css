@@ -98,9 +98,19 @@ div.description {
   margin-left: 15px;
 }
 
+.result {
+  display: grid;
+}
+
+.loading {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
 .loader {
-    display: none;
-    margin-left: 5px;
+    padding: 20px;
     font-size: 10px;
     float: left;
     border-top: 1.1em solid rgba(147, 147, 147, 0.2);
